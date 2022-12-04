@@ -8,18 +8,18 @@ public class Controller {
     }
 
     public void sell(int itemID, int amtSold){
-        model.getItem(itemID).currentStock -= amtSold;
+        model.getItem(itemID).sell(amtSold);
     }
 
     public void increaseStock(int itemID, int amtAdded){
-        model.getItem(itemID).currentStock += amtAdded;
+        model.getItem(itemID).increaseStock(amtAdded);
     }
 
     public void changePrice(int itemID, double newPrice){
-        model.getItem(itemID).price = newPrice;
+        model.getItem(itemID).changePrice(newPrice);
     }
 
     public void changeName(int itemID, String newName){
-        model.getItem(itemID).itemName = newName;
+        model.getItem(itemID).changeName(newName);
     }
 }

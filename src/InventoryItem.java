@@ -11,5 +11,20 @@ public class InventoryItem {
         this.price = price;
     }
 
+    public void sell(int amtSold){
+        currentStock -= amtSold;
+    }
+
+    public void increaseStock(int amtAdded){
+        currentStock += amtAdded;
+    }
+
+    public void changePrice(double newPrice){
+        price = newPrice;
+    }
+
+    public void changeName(String newName){
+        itemName = newName;
+    }
 
 }
