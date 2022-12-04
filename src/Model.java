@@ -27,4 +27,9 @@ public class Model {
         }
         return null;
     }
+
+    //TODO
+    public void saveData(){
+
+    }
 }
