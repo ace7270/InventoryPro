@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 
 public class Model {
@@ -29,7 +30,24 @@ public class Model {
     }
 
     //TODO
-    public void saveData(){
+    public void saveData() throws IOException {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("inventory.dat"));
+            oos.writeObject(inventory);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
+    public void readData() throws IOException {
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\Aaron\\Desktop\\School\\PSU Year 1\\Sem 1\\SWENG311\\InventoryPro\\inventory.dat"));
+            ArrayList<InventoryItem> readInventory = (ArrayList<InventoryItem>) ois.readObject();
+            System.out.println(readInventory.toString());
+        }
+        catch (IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
     }
 }

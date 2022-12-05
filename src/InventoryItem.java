@@ -1,4 +1,6 @@
-public class InventoryItem {
+import java.io.Serializable;
+
+public class InventoryItem implements Serializable {
     protected int itemID;
     protected String itemName;
     protected int currentStock;
@@ -26,5 +28,14 @@ public class InventoryItem {
     public void changeName(String newName){
         itemName = newName;
     }
+
+    @Override
+    public String toString() {
+        return "Item ID: " + itemID +
+                "\nItem Name: " + itemName +
+                "\nCurrent Stock: " + currentStock +
+                "\nPrice: " + price;
+    }
+
 
 }
