@@ -42,9 +42,8 @@ public class Model {
 
     public void readData() throws IOException {
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\Aaron\\Desktop\\School\\Behrend_Year_1\\Sem 1\\SWENG311\\InventoryPro\\inventory.dat"));
-            ArrayList<InventoryItem> readInventory = (ArrayList<InventoryItem>) ois.readObject();
-            System.out.println(readInventory.toString());
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\Aaron\\Desktop\\School\\PSU Year 1\\Sem 1\\SWENG311\\InventoryPro\\inventory.dat"));
+            inventory = (ArrayList<InventoryItem>) ois.readObject();
         }
         catch (IOException | ClassNotFoundException e){
             e.printStackTrace();
