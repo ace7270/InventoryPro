@@ -44,4 +44,8 @@ public class Controller {
     public void readData() throws IOException {
         model.readData();
     }
+
+    public void showInventory(){
+        view.showInventory(model);
+    }
 }

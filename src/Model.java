@@ -50,4 +50,14 @@ public class Model {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder inventoryString = new StringBuilder();
+        for (InventoryItem item: inventory){
+            inventoryString.append(item);
+            inventoryString.append("\n\n");
+        }
+        return inventoryString.toString();
+    }
 }

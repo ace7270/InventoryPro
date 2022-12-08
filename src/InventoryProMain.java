@@ -7,6 +7,6 @@ public class InventoryProMain {
         cont.addItem(new InventoryItem(123, "Water Bottle", 10, 15.00));
         cont.addItem(new InventoryItem(124, "Backpack", 50, 45.00));
         cont.saveData();
-        cont.readData();
+        cont.showInventory();
     }
 }
