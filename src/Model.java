@@ -29,7 +29,7 @@ public class Model {
         return null;
     }
 
-    //TODO
+
     public void saveData() throws IOException {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("inventory.dat"));
@@ -42,7 +42,7 @@ public class Model {
 
     public void readData() throws IOException {
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\Aaron\\Desktop\\School\\PSU Year 1\\Sem 1\\SWENG311\\InventoryPro\\inventory.dat"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\Aaron\\Desktop\\School\\Behrend_Year_1\\Sem 1\\SWENG311\\InventoryPro\\inventory.dat"));
             ArrayList<InventoryItem> readInventory = (ArrayList<InventoryItem>) ois.readObject();
             System.out.println(readInventory.toString());
         }

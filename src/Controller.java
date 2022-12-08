@@ -46,6 +46,6 @@ public class Controller {
     }
 
     public void showInventory(){
-        view.showInventory(model);
+        view.showItems(model.inventory);
     }
 }

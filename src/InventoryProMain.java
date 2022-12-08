@@ -4,9 +4,17 @@ import java.util.ArrayList;
 public class InventoryProMain {
     public static void main(String[] args) throws IOException {
         Controller cont = new Controller(new Model(new ArrayList<>()), new View());
-        cont.addItem(new InventoryItem(123, "Water Bottle", 10, 15.00));
-        cont.addItem(new InventoryItem(124, "Backpack", 50, 45.00));
-        cont.saveData();
+        cont.readData();
+        cont.addItem(new InventoryItem(1, "Water Bottle", 10, 15.00));
+        cont.addItem(new InventoryItem(2, "Backpack", 50, 45.00));
+        cont.addItem(new InventoryItem(3, "Frying Pan", 10, 15.00));
+        cont.addItem(new InventoryItem(4, "Wrapping Paper", 50, 45.00));
+        cont.addItem(new InventoryItem(5, "Silverware", 10, 15.00));
+        cont.addItem(new InventoryItem(6, "Throw Pillow", 50, 45.00));
+        cont.addItem(new InventoryItem(7, "Storage Tote", 10, 15.00));
+        cont.addItem(new InventoryItem(8, "Pencils", 500, 2.00));
         cont.showInventory();
+        cont.saveData();
+
     }
 }
