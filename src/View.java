@@ -21,29 +21,38 @@ public class View {
 
             area.setEditable(false);
             area.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-            area.setBounds(5,0,300,300);
+            area.setBounds(5,0,350,300);
 
             JButton sellButton = new JButton("Sell 1");
             sellButton.setBounds(5,80,95,30);
+            sellButton.addActionListener(e -> {
+                item.currentStock -= 1;
+                area.setText(item.toString());
+            });
             area.add(sellButton);
 
-            JButton buyButton = new JButton("Buy 1");
-            buyButton.setBounds(105,80,95,30);
+            JButton buyButton = new JButton("Add 1 to Stock");
+            buyButton.setBounds(105,80,125,30);
+            buyButton.addActionListener(e -> {
+                item.currentStock += 1;
+                area.setText(item.toString());
+            });
             area.add(buyButton);
 
             JTextField priceField = new JTextField();
-            priceField.setBounds(325, 80, 95, 30);
+            priceField.setBounds(355, 80, 95, 30);
             area.add(priceField);
 
             JButton priceButton = new JButton("Update Price:");
-            priceButton.setBounds(205,80,115,30);
+            priceButton.setBounds(235,80,115,30);
             priceButton.addActionListener(e -> {
                 item.price = Double.parseDouble(priceField.getText());
+                area.setText(item.toString());
             });
             area.add(priceButton);
             frame.add(area);
         }
-        frame.setSize(900,550);
+        frame.setSize(950,550);
         frame.setLayout(new GridLayout(0, 2, 10, 10));
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
